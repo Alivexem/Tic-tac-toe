@@ -17,7 +17,7 @@ boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if (clicked) {
             box.innerText = "X";
-            
+
             box.style.color = "rgb(255, 120, 130)"
         } else {
             box.innerText = "O";
@@ -56,11 +56,11 @@ boxes.forEach((box) => {
         clicked = !clicked;
         //count++;
 
-        
+
         if(checkers.one == "X" && checkers.two == "X"){
             if(checkers.three == "X"){
                 document.getElementById("xscore").innerText++
-               
+
                 document.getElementById("one").style.backgroundColor = "green"
                 document.getElementById("two").style.backgroundColor = "green"
                 document.getElementById("three").style.backgroundColor = "green"
@@ -142,7 +142,7 @@ boxes.forEach((box) => {
                 audio.play()
             }
         }
-        
+
         if(checkers.three == "X" && checkers.five == "X"){
             if(checkers.seven == "X"){
                 document.getElementById("xscore").innerText++
@@ -155,7 +155,7 @@ boxes.forEach((box) => {
                 audio.play()
             }
         }
-        
+
         // O games below 
         if(checkers.three == "O" && checkers.five == "O"){
             if(checkers.seven == "O"){
@@ -169,7 +169,7 @@ boxes.forEach((box) => {
                 audio.play()
             }
         }
-        
+
         if(checkers.one == "O" && checkers.two == "O"){
             if(checkers.three == "O"){
                 document.getElementById("oscore").innerText++
@@ -254,12 +254,10 @@ boxes.forEach((box) => {
                 audio.play()
             }
         }
-        
-        
+
+
     });
 });
-
-
 
 let button = document.getElementById("button")
 button.addEventListener("click",() => {
@@ -275,15 +273,13 @@ button.addEventListener("click",() => {
 })
 
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
   const overlay = document.getElementById('overlay-container');
-  
+
   overlay.style.opacity = 1;
-  
+
   setTimeout(() => {
-    
+
     overlay.style.opacity = 0;
     setTimeout(() => {
         overlay.style.display = "none"
@@ -293,7 +289,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const icon = document.getElementById("icon")
 
-icon.addEventListener("click",() => {
+const restart = document.getElementById("restart")
+restart.addEventListener("click",() => {
     window.location.reload()
 })
+let iclick = true
+icon.addEventListener("click",() => {
+    if(iclick){
+        container.style.display = "flex"
+    }else{
+        container.style.display = "none"
+    }
+    iclick = !iclick
+})
+
+let container = document.getElementById("overlay-container2")
+
+container.style.display = "none"
 
