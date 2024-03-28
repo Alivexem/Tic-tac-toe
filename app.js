@@ -271,6 +271,7 @@ button.addEventListener("click",() => {
                 checkers[items] = false
             }
     })
+        clicked = true;
 })
 
 
