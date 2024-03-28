@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        
+
         body{
             background-color: hsl(200, 70%, 90%);
             font-family: 'Roboto Condensed', sans-serif;
@@ -33,7 +33,7 @@
         .h1 {
             color: hsl(180, 100%, 50%); /* Text color */
         }
-        
+
 
 
 #overlay-container {
@@ -55,6 +55,31 @@
   text-align: center;
   color: white;
 }
+
+
+#overlay-container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 12%;
+  left: 0;
+  width: 100%;
+  height: 88%;
+  background-color: rgba(75, 0, 130, 0.9); /* Adjust opacity as needed */
+  z-index: 9999;
+  opacity: 2;
+  transition: opacity 2.5s ease-in-out;
+}
+
+#overlay-content2 {
+  text-align: center;
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+
+
     .title{
         display:flex;
         justify-content: space-around;
@@ -87,10 +112,35 @@
         font-size: 15px;
         border-radius: 15px;
         font-weight: bold;
-        color: hsl(200, 70%, 90%);;
+        color: hsl(200, 70%, 90%);
+    }
+    #twop{
+        height: 40px;
+        width: 140px;
+        background-color: green;
+        border: 5px solid lime;
+        font-size: 15px;
+        border-radius: 9px;
+        font-weight: bold;
+        color: white;
+        padding: 2px;
+        margin-right: 20px;
+    }
+    #onep{
+        height: 40px;
+        width: 140px;
+        background-color: #CCCCCC;
+        border: none;
+        font-size: 15px;
+        border-radius: 9px;
+        font-weight: bold;
+        color: black;
+        padding: 2px;
+        margin-left: 20px;
+        
     }
     #button:active{
-        
+
         background-color: gray;
     }
     #heading{
@@ -98,30 +148,52 @@
         justify-content: space-between;
         margin-top: 25px;
     }
+    overlay-content2 .blocker{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+      @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+  }
+
+  #icon {
+    display: inline-block;
+    animation: shake 0.5s ease-in-out infinite;
+  }
+  
+ 
     </style>
 </head>
 <body>
     <div id="heading">
         <div style="display: flex;">
     <img style="border-radius: 50%;" src="logo.jpg" height="70" width="70" alt="">
-    
+
      <h2 style="margin-left: 9px; font-family: 'Press Start 2P', sans-serif;">TIC TAC TOE</h2>
      </div>
+      <div class="icon-container">
+    <i id="icon" style="margin-right: 10px; font-size: 30px;" class="fas fa-arrow-down"></i>
+</div>
      
-     <i id="icon" style="margin-right: 10px; font-size: 30px;" class="fas fa-arrow-down"></i>
     </div>
-    
-    
-    <h3 style="text-align: center; margin-top: 25px;">SCOREBOARD</h3>
+
+
+    <h3 style="text-align: center; margin-top: 25px;">2 PLAYER MODE SCOREBOARD</h3>
     <div class="title">
         <h2 style="color:hsl(200, 70%, 90%);; font-size: 28px; font-weight: bold;">X</h2>
         <h4>vs</h4>
         <h2 style="color: hsl(200, 70%, 90%);; font-size : 28px; font-weight: bold;">O</h2>
     </div>
-    
+
     <div class="title2">
         <h2 id="xscore" style="color: red">0</h3>
-        
+
         <h2 id="oscore" style="color: blue">0</h3>
     </div>
     <hr>
@@ -136,21 +208,37 @@
         <div data-value="8" id="eight" class="box"></div>
         <div data-value="9" id="nine" class="box"></div>
     </div>
-    
+
   <div class="butDiv">
       <button id="button">Reset Board</button>
   </div>
-    
+
     <div id="overlay-container">
   <div id="overlay-content">
-  
+
     <h1>INSTINCT DASH</h1>
-    <p>2 player Tic Tac Toe game</p>
-    
+    <p>2 PLAYER MODE Tic Tac Toe game</p>
+
     <img style="border-radius: 50%;" src="best.png" height="200" width="200" alt="">
     <p>EMAIL: athkinstestimony@gmail.com</p>
     <p style="font-family: monospace;">&copy AlivexemTech 2024, All Rights Reserved</p>
+
+  </div>
+</div>
+
+   <div id="overlay-container2">
+  <div id="overlay-content2">
+   <h1>GAME MODES</h1>
+   <div class="blocker">
+       <button id="twop"> 2 Players </button>
+       <a href="com.html"><button id="onep"> VS Computer </button></a>
+   </div>
     
+   <h1 style="margin-top: 70px;">HOW TO PLAY </h1>
+   <p style="font-family: 'Press Start 2P', sans-serif;">The goal is straightforward, you choose between X and O, click the black boxes to input your choice alphabet (X plays first).<br> <br><b style="color:lime;">HOW TO WIN: </b>Arrange your alphabets in 3 rows or columns side by side without having your opponent's alphabet in-between.</p>
+   <p style="font-family: 'Press Start 2P', sans-serif;"><b style="color:lime;">TWO PLAYER MODE: </b>This will be done on the host device imitating the Traditional Tic Tac Toe played on paper. Players take turn to use host device.</p>
+    <p style="font-family: 'Press Start 2P', sans-serif;"><b style="color: lime;">VS COMPUTER MODE: </b>This is a single player mode, you play against Computer.</p>
+    <h2 id="restart" style="margin-top: 70px; color: black; background-color: white;">RESTART GAME</h2>
   </div>
 </div>
 </body>
