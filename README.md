@@ -37,3 +37,6 @@ Contributions are welcome! Feel free to fork the repository and submit a pull re
 
 - Inspired by the simplicity of Tic-Tac-Toe games.
 - Built with love and coffee.
+
+# Link
+- https://alivegame.vercel.app/
