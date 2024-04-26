@@ -6,172 +6,7 @@
     <title>INSTINCT DASH</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-
-        body{
-            background-color: hsl(200, 70%, 90%);
-            font-family: 'Roboto Condensed', sans-serif;
-        }
-        .container {
-            margin-top: 60px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 100px);
-            gap: 2px;
-            width: auto;
-            height: auto;
-        }
-        .box {
-            font-family: 'Orbitron', sans-serif;
-            background-color: hsl(0, 0%, 20%);
-            border: 1px solid #ccc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 48px;
-            font-weight: 700;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 1.2);
-        }
-        .h1 {
-            color: hsl(180, 100%, 50%); /* Text color */
-        }
-
-
-
-#overlay-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Adjust opacity as needed */
-  z-index: 9999;
-  opacity: 0;
-  transition: opacity 2.5s ease-in-out;
-}
-
-#overlay-content {
-  text-align: center;
-  color: white;
-}
-
-
-#overlay-container2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 12%;
-  left: 0;
-  width: 100%;
-  height: 88%;
-  background-color: rgba(75, 0, 130, 0.9); /* Adjust opacity as needed */
-  z-index: 9999;
-  opacity: 2;
-  transition: opacity 2.5s ease-in-out;
-}
-
-#overlay-content2 {
-  text-align: center;
-  color: white;
-  width: 100%;
-  padding: 15px;
-}
-
-
-    .title{
-        display:flex;
-        justify-content: space-around;
-        background-color: gray;
-        padding: 1px;
-        height: 45px;
-        align-items: center;
-        border-radius: 12px 12px 0 0;
-    }
-    .title2{
-        display:flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #FFFFFF;
-        padding: 1px;
-        height: 40px;
-        border-radius: 0 0 12px 12px;
-    }
-    .butDiv{
-        margin-top: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #button{
-        height: 40px;
-        width: 150px;
-        background-color: brown;
-        border: none;
-        font-size: 15px;
-        border-radius: 15px;
-        font-weight: bold;
-        color: hsl(200, 70%, 90%);
-    }
-    #twop{
-        height: 40px;
-        width: 140px;
-        background-color: green;
-        border: 5px solid lime;
-        font-size: 15px;
-        border-radius: 9px;
-        font-weight: bold;
-        color: white;
-        padding: 2px;
-        margin-right: 20px;
-    }
-    #onep{
-        height: 40px;
-        width: 140px;
-        background-color: #CCCCCC;
-        border: none;
-        font-size: 15px;
-        border-radius: 9px;
-        font-weight: bold;
-        color: black;
-        padding: 2px;
-        margin-left: 20px;
-        
-    }
-    #button:active{
-
-        background-color: gray;
-    }
-    #heading{
-        display:flex;
-        justify-content: space-between;
-        margin-top: 25px;
-        padding: 0 15px 0 15px;
-    }
-    overlay-content2 .blocker{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-      @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-5px); }
-      50% { transform: translateX(5px); }
-      75% { transform: translateX(-5px); }
-      100% { transform: translateX(0); }
-  }
-
-  #icon {
-    display: inline-block;
-    animation: shake 0.5s ease-in-out infinite;
-  }
-  
- 
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="heading">
@@ -181,13 +16,13 @@
      <h2 style="margin-left: 9px; font-family: 'Press Start 2P', sans-serif;">TIC TAC TOE</h2>
      </div>
       <div class="icon-container">
-    <i id="icon" style="margin-right: 10px; font-size: 30px;" class="fas fa-arrow-down"></i>
+    <i id="icon" style="font-size: 30px;" class="fas fa-arrow-down"></i>
 </div>
-     
+
     </div>
 
 
-    <h3 style="text-align: center; margin-top: 25px;">2 PLAYER MODE SCOREBOARD</h3>
+    <h3 id="htext" style="margin-top: 35px;">2 PLAYER MODE SCOREBOARD</h3>
     <div class="title">
         <h2 style="color:hsl(200, 70%, 90%);; font-size: 28px; font-weight: bold;">X</h2>
         <h4>vs</h4>
@@ -200,6 +35,7 @@
         <h2 id="oscore" style="color: blue">0</h3>
     </div>
     <hr>
+    <div class="containerWrap">
     <div class="container">
         <div data-value="1" id="one" class="box"></div>
         <div data-value="2" id="two" class="box"></div>
@@ -210,6 +46,7 @@
         <div data-value="7" id="seven" class="box"></div>
         <div data-value="8" id="eight" class="box"></div>
         <div data-value="9" id="nine" class="box"></div>
+    </div>
     </div>
 
   <div class="butDiv">
@@ -236,7 +73,7 @@
        <button id="twop"> 2 Players </button>
        <a href="com.html"><button id="onep"> VS Computer </button></a>
    </div>
-    
+
    <h2 style="margin-top: 70px;">HOW TO PLAY </h2>
    <p style="font-family: 'Press Start 2P', sans-serif;">The goal is straightforward, you choose between X and O, click the black boxes to input your choice alphabet (X plays first).<br> <br><b style="color:lime;">HOW TO WIN: </b>Arrange your alphabets in 3 rows or columns side by side without having your opponent's alphabet in-between.</p>
    <p style="font-family: 'Press Start 2P', sans-serif;"><b style="color:lime;">TWO PLAYER MODE: </b>This will be done on the host device imitating the Traditional Tic Tac Toe played on paper. Players take turn to use host device.</p>
